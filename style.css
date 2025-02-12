@@ -258,7 +258,7 @@ ul {
 
 .main-content-text a {
   color: #ffffff;
-  background-color: var(--main-dark);
+  background-color: var(--main-dark); 
   max-width: 150px;
   width: 100%;
   height: 50px;
@@ -272,7 +272,8 @@ ul {
 .search-bar {
   width: 100%;
   height: 40vh;
-  background-color: #ffffffbb;
+  background-color: var(--main-color);
+  opacity: 0.8;
   backdrop-filter: blur (30px);
   position: fixed;
   left: 0px;
@@ -342,7 +343,8 @@ opacity: 0.8;
    font-family: 'Poppins', sans-serif;
 }
 
-.login-form{
+.login-form,
+.sign-up-form{
    max-width: 420px;
    width: 100%;
    padding: 20px 10px;
@@ -354,10 +356,12 @@ opacity: 0.8;
    align-items: center;
    position: relative;
    border-radius: 5px;
-   
+   animation: fade 0.6s;
+   font-family: 'Poppins', sans-serif;
 }
 
-.login-form form{
+.login-form form,
+.sign-up-form form{
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -372,7 +376,8 @@ opacity: 0.8;
    fill: #868686;
 }
 
-.login-form strong{
+.login-form strong,
+.sign-up-form strong{
    color: #272727;
    font-size: 2rem;
    margin: 2px 7px 7px 7px;
@@ -382,7 +387,8 @@ opacity: 0.8;
    font-family: 'Poppins', sans-serif;
 }
 
-.login-form input{
+.login-form input,
+.sign-up-form input{
    width: 90%;
    height: 45px;
    margin: 6px 0px;
@@ -392,11 +398,13 @@ opacity: 0.8;
    border-radius: 7px;
 }
 
-.login-form input::placeholder{
+.login-form input::placeholder,
+.sign-up-form input::placeholder{
    color: rgba(0,0,0,0.5);
 }
 
-.login-form input[type="submit"]{
+.login-form input[type="submit"],
+.sign-up-form input[type="submit"]{
    color: #ffffff;
    border: none;
    outline: none;
@@ -429,6 +437,7 @@ opacity: 0.8;
    font-size: 15px;
 
 }
+
 /* -------------------------------------- */
 .form-btns a{
    color: #4d4d4d;
@@ -440,4 +449,21 @@ opacity: 0.8;
    text-decoration: underline;
 }
 
+.form,
+.login-form,
+.sign-up-form{
+display: none;
+}
 
+.login-active, .login-active, .login-form, .sign-up-active, .sign-up-active, .sign-up-form{
+display: flex;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
